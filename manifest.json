@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Code-Buddy",
+  "version": "1.0",
+  "description": "A code buddy that gives hints for LeetCode problems.",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://*.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.leetcode.com/problems/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
